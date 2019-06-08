@@ -15,6 +15,7 @@
 		3954C67922AB3D12009BB210 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3954C67722AB3D12009BB210 /* LaunchScreen.storyboard */; };
 		3954C68422AB3D12009BB210 /* SwiftUI_ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3954C68322AB3D12009BB210 /* SwiftUI_ChatTests.swift */; };
 		3954C68F22AB3D12009BB210 /* SwiftUI_ChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3954C68E22AB3D12009BB210 /* SwiftUI_ChatUITests.swift */; };
+		3954C69D22AB51C4009BB210 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3954C69C22AB51C4009BB210 /* ChatController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3954C68A22AB3D12009BB210 /* SwiftUI ChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI ChatUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3954C68E22AB3D12009BB210 /* SwiftUI_ChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ChatUITests.swift; sourceTree = "<group>"; };
 		3954C69022AB3D12009BB210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3954C69C22AB51C4009BB210 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				3954C66C22AB3D10009BB210 /* AppDelegate.swift */,
 				3954C66E22AB3D10009BB210 /* SceneDelegate.swift */,
 				3954C67022AB3D10009BB210 /* ContentView.swift */,
+				3954C69C22AB51C4009BB210 /* ChatController.swift */,
 				3954C67222AB3D12009BB210 /* Assets.xcassets */,
 				3954C67722AB3D12009BB210 /* LaunchScreen.storyboard */,
 				3954C67A22AB3D12009BB210 /* Info.plist */,
@@ -270,6 +273,7 @@
 				3954C66D22AB3D10009BB210 /* AppDelegate.swift in Sources */,
 				3954C66F22AB3D10009BB210 /* SceneDelegate.swift in Sources */,
 				3954C67122AB3D10009BB210 /* ContentView.swift in Sources */,
+				3954C69D22AB51C4009BB210 /* ChatController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
