@@ -19,84 +19,78 @@ struct ChatMessage : Hashable {
 
 struct ContentView : View {
     
-    // @State here is necessary to make the composedMessage variable accessible from different views
+     // @State here is necessary to make the composedMessage variable accessible from different views
     @State var composedMessage: String = ""
     @EnvironmentObject var chatController: ChatController
     
-    var messages = [
-        ChatMessage(message: "Hello world", avatar: "A", color: .red),
-        ChatMessage(message: "Hi", avatar: "B", color: .blue)
-    ]
-    
     var body: some View {
-        
+      
         // the VStack is a vertical stack where we place all our substacks like the List and the TextField
         VStack {
-            // I've removed the Hello World text line from here and replaced it with a list
+            // I've removed the text line from here and replaced it with a list
             // List is the way you should create any list in SwiftUI
             List {
-                ForEach(chatController.messages.identified(by: \.self)) {
-                    // we have several messages so we use the For Loop
-                    ChatRow(chatMessage: $0)
+                // we have several messages so we use the For Loop
+                ForEach(chatController.messages, id: \.self) { msg in
+                    ChatRow(chatMessage: msg)
                 }
             }
             
             // TextField are aligned with the Send Button in the same line so we put them in HStack
             HStack {
                 // this textField generates the value for the composedMessage @State var
-                TextField($composedMessage, placeholder: Text("Message...")).frame(minHeight: 30)
+                TextField("Message...", text: $composedMessage).frame(minHeight: CGFloat(30))
                 // the button triggers the sendMessage() function written in the end of current View
                 Button(action: sendMessage) {
                     Text("Send")
-                    
                 }
-                }.frame(minHeight: 50).padding()
-                // that's the height of the HStack
-            }
+            }.frame(minHeight: CGFloat(50)).padding()
+            // that's the height of the HStack
+        }
     }
-    
     func sendMessage() {
         chatController.sendMessage(ChatMessage(message: composedMessage, avatar: "C", color: .green, isMe: true))
         composedMessage = ""
     }
-    
 }
 
 // ChatRow will be a view similar to a Cell in standard Swift
 struct ChatRow : View {
+    // we will need to access and represent the chatMessages here
     var chatMessage: ChatMessage
-    
     // body - is the body of the view, just like the body of the first view we created when opened the project
     var body: some View {
+        // HStack - is a horizontal stack. We let the SwiftUI know that we need to place
+        // all the following contents horizontally one after another
         Group {
-            // if the message is sent by the user,
-            // show it on the right side of the view
             if !chatMessage.isMe {
-                // HStack - is a horizontal stack. We let the SwiftUI know that we need to place
-                // all the following contents horizontally one after another
                 HStack {
-                    Text(chatMessage.avatar)
-                    Text(chatMessage.message)
-                        .bold()
-                        .foregroundColor(Color.white)
-                        .padding(10)
-                        .background(chatMessage.color, cornerRadius: 10)
-                    // Spacer fills the gaps of the Horizontal stack between the content and the borders
-                    Spacer()
+                    Group {
+                        Text(chatMessage.avatar)
+                        Text(chatMessage.message)
+                            .bold()
+                            .padding(10)
+                            .foregroundColor(Color.white)
+                            .background(chatMessage.color)
+                            .cornerRadius(10)
+                    }
                 }
             } else {
-                // else show the message on the left side
                 HStack {
-                    Spacer()
-                    Text(chatMessage.message)
-                        .bold()
-                        .foregroundColor(Color.white)
-                        .padding(10)
-                        .background(chatMessage.color, cornerRadius: 10)
-                    Text(chatMessage.avatar)
+                    Group {
+                        Spacer()
+                        Text(chatMessage.message)
+                            .bold()
+                            .foregroundColor(Color.white)
+                            .padding(10)
+                            .background(chatMessage.color)
+                        .cornerRadius(10)
+                        Text(chatMessage.avatar)
+                    }
                 }
             }
         }
+
     }
 }
 
