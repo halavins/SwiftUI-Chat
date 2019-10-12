@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  SwiftUI Chat
 //
-//  Created by Nick Halavins on 6/7/19.
+//  Created by Nick Halavins on 6/7/19. Updated 10/11/19
 //  Copyright © 2019 AntiLand. All rights reserved.
 //
 
