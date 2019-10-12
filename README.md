@@ -5,5 +5,5 @@ The world's first open-source chat app in SwiftUI. Written right during the Appl
 
 Read the full documentary here:
 
-## How to build a Chat App or Messenger in SwiftUI for iOS Swift:
+**How to build a Chat App or Messenger in SwiftUI for iOS Swift:**
 https://medium.com/@halavins/how-to-build-a-chat-app-or-messenger-in-swiftui-for-ios-swift-b46dbe5cc0ab
